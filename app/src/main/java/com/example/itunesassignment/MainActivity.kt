@@ -3,10 +3,6 @@ package com.example.itunesassignment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import androidx.viewpager2.widget.ViewPager2
-import com.example.itunesassignment.databinding.ActivityMainBinding
 import com.example.itunesassignment.model.remote.ItunesNetwork
 import com.example.itunesassignment.model.remote.ItunesResponse
 import com.example.itunesassignment.view.Communicator
@@ -18,26 +14,13 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity(), Communicator {
-    private lateinit var binding: ActivityMainBinding
     private lateinit var tabLayout: TabLayout
-   // private lateinit var  swipeRefresh: SwipeRefreshLayout
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initViews()
         getMusic(genre = "rock")
-       // swipeRefresh()
     }
-    /*
-    private fun swipeRefresh() {
-        swipeRefresh = findViewById(R.id.swipe_refresh)
-
-        swipeRefresh.setOnRefreshListener {
-            Toast.makeText(this, "this has refreshed", Toast.LENGTH_SHORT).show()
-            swipeRefresh.isRefreshing = false
-        }
-    }*/
 
     private fun initViews() {
         tabLayout = findViewById(R.id.tl_music)

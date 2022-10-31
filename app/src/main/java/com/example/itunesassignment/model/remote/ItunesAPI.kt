@@ -6,14 +6,6 @@ import retrofit2.http.Query
 
 
 interface ItunesAPI {
-    //search
-    // ?term=rock
-    // &amp;media=music
-    // &amp;entity=song
-    // &amp;limit=50
-
-    // https://itunes.apple.com/search?term=pop&amp;media=music&amp;entity=song&amp;limit=50
-    // https://itunes.apple.com/search?term=rock&media=music&entity=song&limit=50
 
     @GET(ItunesNetwork.ENDPOINT)
     fun getMusic(
