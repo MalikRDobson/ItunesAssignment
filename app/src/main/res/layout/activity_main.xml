@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_music"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_rock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rock"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_classic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Classic"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_pop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pop"/>
+    </com.google.android.material.tabs.TabLayout>
+    <fragment
+        android:id="@+id/fragment_search_static"
+        android:name="com.example.itunesassignment.view.ItunesFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tl_music"
+        android:layout_marginTop="32dp"/>
+    <FrameLayout
+        android:id="@+id/song_list_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_search_static"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
