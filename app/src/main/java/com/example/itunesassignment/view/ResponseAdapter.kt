@@ -34,7 +34,7 @@ class ResponseAdapter(private val dataSet: List<ItunesInfo>):
             }
             binding.tvArtistName.text = itunesItem.artistName
             binding.tvCollectionName.text = itunesItem.collectionName
-            Picasso.Builder(binding.root.context).build().load(itunesItem.artworkUrl60).into(binding.ivArtwork)
+            Picasso.Builder(binding.root.context).build().load(itunesItem.artworkUrl60).resize(150,150).into(binding.ivArtwork)
             binding.tvTrackPrice.text = itunesItem.trackPrice.toString() + " USD"
         }
     }
